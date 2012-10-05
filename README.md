@@ -2,6 +2,7 @@ Twenty Twelve Schema.org Child Theme
 ====================================
 
 **By Joshua Lyman - http://www.joshualyman.com**
+
 *More info: http://www.joshualyman.com/twenty-twelve-schema-org-child-theme/*
 
 A child theme for the standard WordPress Twenty Twelve theme that integrates Schema.org microdata directly into each page.
@@ -31,5 +32,5 @@ Changelog
 
 *Note: The theme version is designed to track the Twenty Twelve theme version for x.y releases. Third point releases (x.y.z) are updates made apart from Twenty Twelve parent theme releases.*
 
-* 1.3
+* 1.0
   * Initial release
