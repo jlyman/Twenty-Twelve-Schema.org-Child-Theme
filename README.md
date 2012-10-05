@@ -16,6 +16,8 @@ For example, each post now is wrapped with `<article itemscope itemtype="http://
 
 Adding microdata to your site has several benefits. First and foremost, you contribute to machine readable data everywhere. The Internet is a wonderful place for humans to browse, but we can make it more accessible and more consumable if we let the computer figure as much of it out as it can. Second, search engines can use this data to get a better understanding of each page that it indexes, and hopefully provide more relevant search results. **(Notice that I am not saying you are going to get an SEO boost for doing this. You may, you may not, I have no idea. But if everyone included this data on their sites, the results would be better.)** There are no downsides really to simply plugging the data in.
 
+Additionally, I have added a three widget section to the footer, since that functionality existed in Twenty Eleven and was very useful. The widgets in the footer are optional, but available for use.
+
 Frequently Asked Questions
 --------------------------
 
