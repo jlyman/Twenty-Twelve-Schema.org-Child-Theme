@@ -1,0 +1,43 @@
+/*
+Theme Name: Twenty Twelve - Schema.org Child
+Theme URI: http://www.joshualyman.com/twenty-twelve-schema-org-child-theme/
+Author: Joshua Lyman
+Author URI: http://www.joshualyman.com
+Description: Take the beauty of the original Twenty Twelve theme and add on powerful microdata markup with the Schema.org conventions. Improve search engine parsing and contribute to machine readable data everywhere.
+Template: twentytwelve
+Version: 1.0
+License: GNU General Public License
+Tags: schema.org, schema, microdata, rdfa, seo, dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+*/
+
+/* -------------------------------------------------------------- */
+
+@import url("../twentytwelve/style.css");
+
+.site-info { 
+	clear: both; 
+}
+
+#footer-widgets {
+	width: 100%;
+	border-top: none;
+}
+#footer-widgets .widget li {
+	list-style-type: none;
+}
+.template-front-page #footer-widgets {
+	padding-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+	/* Three Footer Widget Areas */
+	#footer-widgets.three .widget {
+		float: left;
+		margin-right: 3.7%;
+		width: 30.85%;
+		clear: none;
+	}
+	#footer-widgets.three .widget + .widget + .widget {
+		margin-right: 0;
+	}
+}
