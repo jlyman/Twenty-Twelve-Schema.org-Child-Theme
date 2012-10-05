@@ -1,6 +1,9 @@
 Twenty Twelve Schema.org Child Theme
 ====================================
 
+**By Joshua Lyman - http://www.joshualyman.com**
+*More info: http://www.joshualyman.com/twenty-twelve-schema-org-child-theme/*
+
 A child theme for the standard WordPress Twenty Twelve theme that integrates Schema.org microdata directly into each page.
 
 Description
