@@ -14,6 +14,12 @@ Tags: microformats, dark, light, white, black, gray, one-column, two-columns, le
 
 @import url("../twentytwelve/style.css");
 
+p.comment-author-name, 
+.widget-area .widget p.comment-author-name { 
+	display: inline-block; 
+	margin-bottom: 0;
+}
+
 .site-info { 
 	clear: both; 
 }

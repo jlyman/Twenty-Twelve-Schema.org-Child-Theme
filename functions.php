@@ -69,10 +69,10 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
-			<header class="comment-meta comment-author vcard">
+			<header class="comment-meta comment-author vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person">
 				<?php
 					echo get_avatar( $comment, 44 );
-					printf( '<cite class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person">%1$s %2$s</cite>',
+					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
 						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
@@ -150,4 +150,19 @@ function twentytwelve_entry_meta() {
 		$author
 	);
 }
+endif;
+
+if ( ! function_exists( 'twentytwelve_comment_author_hook' ) ) :
+/**
+ * Adds Schema.org author markup to comment author links.
+ *
+ * @since Twenty Twelve 1.0
+ */
+function twentytwelve_comment_author_hook( $author_code ) {
+	if (substr($author_code, 0, 2) == '<a') {
+		$author_code = substr($author_code, 0, -1) . ' itemprop="url">';
+	}
+	return '<p class="comment-author-name" itemprop="name">' . $author_code . '</p>'; // Can't use a span tag because of conflicting styles on .bypostauthor
+}
+add_filter('get_comment_author_link', 'twentytwelve_comment_author_hook');
 endif;
