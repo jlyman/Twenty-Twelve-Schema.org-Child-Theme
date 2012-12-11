@@ -77,7 +77,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 						// If current post author is also comment author, make it known visually.
 						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
 					);
-					printf( '<a href="%1$s"><time pubdate datetime="%2$s" itemprop="commentTime">%3$s</time></a>',
+					printf( '<a href="%1$s"><time datetime="%2$s" itemprop="commentTime">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
@@ -96,7 +96,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 			</section><!-- .comment-content -->
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentytwelve' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
@@ -120,7 +120,7 @@ function twentytwelve_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
 
-	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate itemprop="datePublished">%4$s</time></a>',
+	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" itemprop="datePublished">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -165,4 +165,24 @@ function twentytwelve_comment_author_hook( $author_code ) {
 	return '<p class="comment-author-name" itemprop="name">' . $author_code . '</p>'; // Can't use a span tag because of conflicting styles on .bypostauthor
 }
 add_filter('get_comment_author_link', 'twentytwelve_comment_author_hook');
+endif;
+
+if ( ! function_exists( 'twentytwelve_allow_schema_markup' ) ) :
+/**
+ * Allows Schema.org attributes to be added to HTML tags in the editor (but not for comments).
+ *
+ * @since Twenty Twelve 1.0
+ */
+function twenty_twelve_allow_schema_markup() {
+	global $allowedposttags;
+	foreach( $allowedposttags as $tag => $attr ) {
+		$attr[ 'itemscope' ] = array();
+		$attr[ 'itemtype' ] = array();
+		$attr[ 'itemprop' ] = array();
+		$allowedposttags[ $tag ] = $attr;
+	}
+	return $allowedposttags;
+}
+
+add_action( 'init', 'twentytwelve_allow_schema_markup' );
 endif;
