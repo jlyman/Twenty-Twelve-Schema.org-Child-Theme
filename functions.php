@@ -173,7 +173,7 @@ if ( ! function_exists( 'twentytwelve_allow_schema_markup' ) ) :
  *
  * @since Twenty Twelve 1.0
  */
-function twenty_twelve_allow_schema_markup() {
+function twentytwelve_allow_schema_markup() {
 	global $allowedposttags;
 	foreach( $allowedposttags as $tag => $attr ) {
 		$attr[ 'itemscope' ] = array();
