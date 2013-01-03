@@ -20,9 +20,9 @@ function twentytwelve_extra_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'twentyeleven' ),
+		'name' => __( 'Footer Area One', 'twentytwelve' ),
 		'id' => 'sidebar-5',
-		'description' => __( 'Found at the bottom of every page (except 404s) as the footer. Center.', 'twentyeleven' ),
+		'description' => __( 'Found at the bottom of every page (except 404s) as the footer. Center.', 'twentytwelve' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -30,9 +30,9 @@ function twentytwelve_extra_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'twentyeleven' ),
+		'name' => __( 'Footer Area Two', 'twentytwelve' ),
 		'id' => 'sidebar-6',
-		'description' => __( 'Found at the bottom of every page (except 404s) as the footer. Right Side.', 'twentyeleven' ),
+		'description' => __( 'Found at the bottom of every page (except 404s) as the footer. Right Side.', 'twentytwelve' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
