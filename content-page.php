@@ -10,6 +10,9 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
 		<header class="entry-header">
+			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
+			<?php the_post_thumbnail(); ?>
+			<?php endif; ?>
 			<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 		</header>
 

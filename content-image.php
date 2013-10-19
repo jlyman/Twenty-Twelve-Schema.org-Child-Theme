@@ -14,7 +14,7 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-meta">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark" itemprop="url">
+			<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
 				<h1><?php the_title(); ?></h1>
 				<h2><time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></h2>
 			</a>
