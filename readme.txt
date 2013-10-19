@@ -33,3 +33,5 @@ No idea. I highly doubt it. But you will be contributing to machine readable dat
 * Match the official 1.1.1 version, released with WP 3.5
 = 1.1.2 =
 * Fix for typo in functions.php to allow Schema.org markup in posts. 
+= 1.2 =
+* Match the official 1.2 release
