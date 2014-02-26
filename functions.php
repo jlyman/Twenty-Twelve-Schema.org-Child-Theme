@@ -160,7 +160,7 @@ if ( ! function_exists( 'twentytwelve_comment_author_hook' ) ) :
  */
 function twentytwelve_comment_author_hook( $author_code ) {
 	if (substr($author_code, 0, 2) == '<a') {
-		$author_code = substr($author_code, 0, -1) . ' itemprop="url">';
+		$author_code = '<a itemprop="url"' . substr($author_code, 2);
 	}
 	return '<p class="comment-author-name" itemprop="name">' . $author_code . '</p>'; // Can't use a span tag because of conflicting styles on .bypostauthor
 }
